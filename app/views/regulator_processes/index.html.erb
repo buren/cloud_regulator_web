@@ -3,19 +3,25 @@
     <div class="col-xs-2"></div>
     <div class="col-xs-8">
       <h1>Cloud regulator</h1>
-      <div id="myfirstchart" style="height: 250px;"></div>
+      <div id="sensoroutput" style="height: 250px;"></div>
+      <% so = SensorOutput.first(10) %>
       <script>
         new Morris.Line({
           // ID of the element in which to draw the chart.
-          element: 'myfirstchart',
+          element: 'sensoroutput',
           // Chart data records -- each entry in this array corresponds to a point on
           // the chart.
           data: [
-            { year: '2008', value: 20 },
-            { year: '2009', value: 10 },
-            { year: '2010', value: 5 },
-            { year: '2011', value: 5 },
-            { year: '2012', value: 20 }
+            { year: '2004', value: <%= so[0].angle %> },
+            { year: '2005', value: <%= so[1].angle %> },
+            { year: '2006', value: <%= so[2].angle %> },
+            { year: '2007', value: <%= so[3].angle %> },
+            { year: '2008', value: <%= so[4].angle %> },
+            { year: '2009', value: <%= so[5].angle %> },
+            { year: '2010', value: <%= so[6].angle %> },
+            { year: '2011', value: <%= so[7].angle %> },
+            { year: '2012', value: <%= so[8].angle %> },
+            { year: '2013', value: <%= so[9].angle %> }
           ],
           // The name of the data record attribute that contains x-values.
           xkey: 'year',
