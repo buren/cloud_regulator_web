@@ -21,5 +21,7 @@
 
 <%= yield %>
 
+<% if content_for?(:javascript) %><%= yield :javascript %>><% end %>
+
 </body>
 </html>
