@@ -1,0 +1,2 @@
+class ProcessConfigsController < ApplicationController
+end

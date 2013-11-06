@@ -1,0 +1,2 @@
+class ProcessControllerOutputsController < ApplicationController
+end

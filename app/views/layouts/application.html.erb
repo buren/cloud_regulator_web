@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CloudRegulator</title>
+  <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "http://cdn.oesmith.co.uk/morris-0.4.3.min.css", media: "all", "data-turbolinks-track" => true %>
+
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "http://cdn.oesmith.co.uk/morris-0.4.3.min.js", "data-turbolinks-track" => true %>
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

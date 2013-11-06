@@ -1,0 +1,2 @@
+class RegulatorProcessesController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class SensorOutputsController < ApplicationController
+end
