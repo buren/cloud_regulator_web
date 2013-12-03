@@ -18,9 +18,8 @@ class ProcessConfigsController < ApplicationController
     pc.n_constant =    params[:process_config][:n_constant].to_f
     pc.beta_constant = params[:process_config][:beta_constant].to_f
     pc.h_constant =    params[:process_config][:h_constant].to_f
-    asd
     pc.save!
-    render text: 'Success'
+    redirect_to :root and return
   end
 
   def latest_config

@@ -33,3 +33,4 @@ $('.numeric').keypress(function(e) {
   if (!($.inArray(k,a)>=0))
     e.preventDefault();
 });
+
