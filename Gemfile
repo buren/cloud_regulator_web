@@ -7,6 +7,8 @@ gem 'rails', '4.0.0'
 
 gem 'thin'
 
+gem 'rails_12factor' # Heroku integration
+
 # Use mysql as the database for Active Record
 gem 'mysql2', group: :development
 
