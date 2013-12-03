@@ -1,11 +1,12 @@
 class SensorOutputsController < ApplicationController
-  # "sensorOutput": {
-  #   "angle": 15,
-  #   "position": 22,
-  #   "latency": 23
-  # }
-  # // cloud_regulator.herokuapp.com
 
-  # respond to the above JSON
+  def create
+    so = SensorOutput.new
+    so.latency = params[:latency]
+    so.angle = params[:angle]
+    so.position = params[:position]
+    so.save!
+    render text: 'Success'
+  end
 
 end

@@ -6,6 +6,11 @@ gem 'rails', '4.0.0'
 # Use mysql as the database for Active Record
 gem 'mysql2', group: :development
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
 # Use mysql as the database for Active Record
 gem 'pg', group: :production
 

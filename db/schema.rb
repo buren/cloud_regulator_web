@@ -14,20 +14,20 @@
 ActiveRecord::Schema.define(version: 20131106104206) do
 
   create_table "process_configs", force: true do |t|
-    t.decimal  "k_constant",           precision: 10, scale: 0
-    t.decimal  "ti_constant",          precision: 10, scale: 0
-    t.decimal  "tr_constant",          precision: 10, scale: 0
-    t.decimal  "td_constant",          precision: 10, scale: 0
-    t.decimal  "n_constant",           precision: 10, scale: 0
-    t.decimal  "beta_constant",        precision: 10, scale: 0
-    t.decimal  "h_constant",           precision: 10, scale: 0
+    t.decimal  "k_constant",           precision: 10, scale: 2
+    t.decimal  "ti_constant",          precision: 10, scale: 2
+    t.decimal  "tr_constant",          precision: 10, scale: 2
+    t.decimal  "td_constant",          precision: 10, scale: 2
+    t.decimal  "n_constant",           precision: 10, scale: 2
+    t.decimal  "beta_constant",        precision: 10, scale: 2
+    t.decimal  "h_constant",           precision: 10, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "regulator_process_id"
   end
 
   create_table "process_controller_outputs", force: true do |t|
-    t.decimal  "control_signal",   precision: 10, scale: 0
+    t.decimal  "control_signal",   precision: 10, scale: 2
     t.integer  "process_cycle_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20131106104206) do
   end
 
   create_table "sensor_outputs", force: true do |t|
-    t.decimal  "position",         precision: 10, scale: 0
-    t.decimal  "angle",            precision: 10, scale: 0
+    t.decimal  "position",         precision: 10, scale: 2
+    t.decimal  "angle",            precision: 10, scale: 2
     t.integer  "latency"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -6,7 +6,8 @@ CloudRegulator::Application.routes.draw do
   resources :process_cycles
   resources :regulator_processes
 
-  get 'live_cycles', to: 'process_cycles#live_cycles'
+  get 'live_cycles', to: 'process_cycles#live_cycles' # Returns last 10 process_cycle values as JSON
+  get 'config', to: 'process_configs#latest_config'    # Returns lastest config values
 
   root 'regulator_processes#index'
 end

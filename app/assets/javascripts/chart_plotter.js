@@ -21,3 +21,15 @@ function update() {
   req++;
 }
 setInterval(update, _updateRate);
+
+
+// Only allow numeric input
+$('.numeric').keypress(function(e) {
+  var a = [];
+  var k = e.which;
+  for (i = 48; i < 58; i++)
+    a.push(i);
+  a.push(46);
+  if (!($.inArray(k,a)>=0))
+    e.preventDefault();
+});
