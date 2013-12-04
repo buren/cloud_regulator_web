@@ -16,11 +16,13 @@
 
 <div id="config" class="intro">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
-        <h4><%= @raspberry.ip_address ? "Rasperry ip: #{@raspberry.ip_address}" : 'No Rasperry online' %></h4>
+    <% if @raspberry %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          <h4><%= @raspberry.ip_address ? "Rasperry ip: #{@raspberry.ip_address}" : 'No Rasperry online' %></h4>
+        </div>
       </div>
-    </div>
+    <% end %>
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
         <h2>Configuration</h2>
@@ -72,9 +74,17 @@
       pointSize: 0
   });
 
+
+  function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
   var req = 0;
   function update() {
-    $.getJSON('/live_cycles?req=' + req, function(jsonData) {
+    $.getJSON('/live_cycles?req=' + req + "&points=" + getParameterByName("points"), function(jsonData) {
       graph.setData(jsonData);
     });
     req++;
