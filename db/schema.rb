@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204140529) do
+ActiveRecord::Schema.define(version: 20131204182900) do
 
   create_table "process_configs", force: true do |t|
     t.decimal  "k_constant",           precision: 10, scale: 0
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20131204140529) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "regulator_process_id"
+    t.boolean  "integrator_on"
   end
 
   create_table "process_controller_outputs", force: true do |t|
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20131204140529) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "process_cycle_id"
+    t.decimal  "control_output",   precision: 10, scale: 0
   end
 
 end
