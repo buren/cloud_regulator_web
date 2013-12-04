@@ -17,6 +17,11 @@
 <div id="config" class="intro">
   <div class="container">
     <div class="row">
+      <div class="col-xs-12">
+        <h4><%= @raspberry.ip_address ? "Rasperry ip: #{@raspberry.ip_address}" : 'No Rasperry online' %></h4>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
         <h2>Configuration</h2>
           <%= form_for @config do |f| %>
