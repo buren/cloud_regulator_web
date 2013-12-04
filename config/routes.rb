@@ -1,5 +1,7 @@
 CloudRegulator::Application.routes.draw do
 
+  resources :raspberries
+
   resources :process_configs
   resources :process_controller_outputs
   resources :sensor_outputs
