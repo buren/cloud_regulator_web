@@ -2,7 +2,7 @@ class ProcessCyclesController < ApplicationController
 
   def live_cycles
     # req = (params[:req].to_i * 10)%11
-    sos = SensorOutput.last(30)
+    sos = SensorOutput.last(300)
     # sos = SensorOutput.where(id: req..(req+10)).reverse
     data = Array.new
     sos.each_with_index do |so, index|
