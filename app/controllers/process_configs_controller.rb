@@ -9,8 +9,11 @@ class ProcessConfigsController < ApplicationController
   end
 
   def set_config
-    pc = ProcessConfig.last
+    pc = ProcessConfig.where(is_pid: params[:process_config][:is_pid].eql?('true')).last
     pc = ProcessConfig.new unless pc
+
+    pc.is_pid =        params[:process_config][:is_pid].eql?('true')
+
     pc.k_constant =    params[:process_config][:k_constant].to_f
     pc.td_constant =   params[:process_config][:td_constant].to_f
     pc.n_constant =    params[:process_config][:n_constant].to_f
@@ -24,7 +27,7 @@ class ProcessConfigsController < ApplicationController
   end
 
   def latest_config
-    render json: ProcessConfig.last
+    render json: ProcessConfig.where(is_pid: params[:pid].eql?('true')).last
   end
 
 end

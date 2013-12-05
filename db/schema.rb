@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204182900) do
+ActiveRecord::Schema.define(version: 20131205120048) do
 
   create_table "process_configs", force: true do |t|
     t.decimal  "k_constant",           precision: 10, scale: 0
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131204182900) do
     t.datetime "updated_at"
     t.integer  "regulator_process_id"
     t.boolean  "integrator_on"
+    t.boolean  "is_pid"
   end
 
   create_table "process_controller_outputs", force: true do |t|
@@ -42,6 +43,13 @@ ActiveRecord::Schema.define(version: 20131204182900) do
 
   create_table "raspberries", force: true do |t|
     t.string   "ip_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reference_signals", force: true do |t|
+    t.decimal  "reference_value", precision: 10, scale: 0
+    t.boolean  "manual_mode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
