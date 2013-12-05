@@ -1,6 +1,10 @@
 class ReferenceSignalsController < ApplicationController
   before_action :set_reference_signal, only: [:show, :edit, :update, :destroy]
 
+  def latest
+    render json: ReferenceSignal.last
+  end
+
   # GET /reference_signals
   # GET /reference_signals.json
   def index
