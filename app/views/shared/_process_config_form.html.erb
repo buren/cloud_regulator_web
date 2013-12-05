@@ -4,13 +4,18 @@
   <%= form_for process_config do |f| %>
     <%= f.label :k_constant, class: 'pull-left' %>
     <%= f.number_field :k_constant, placeholder: "k", class: 'numeric pull-right', step: :any %>
-    <div class="clearfix"></div>
 
-    <%= f.label :td_constant, class: 'pull-left' %>
-    <%= f.number_field :td_constant, placeholder: "td", class: 'numeric pull-right', step: :any %>
-    <div class="clearfix"></div>
-    <%= f.label :n_constant, class: 'pull-left' %>
-    <%= f.number_field :n_constant, placeholder: "n", class: 'numeric pull-right', step: :any %>
+    <% if process_config.is_pid %>
+      <div class="clearfix"></div>
+      <%= f.label :td_constant, class: 'pull-left' %>
+      <%= f.number_field :td_constant, placeholder: "td", class: 'numeric pull-right', step: :any %>
+      <div class="clearfix"></div>
+      <%= f.label :n_constant, class: 'pull-left' %>
+      <%= f.number_field :n_constant, placeholder: "n", class: 'numeric pull-right', step: :any %>
+    <% else %>
+      <br><br><br><br>
+    <% end %>
+
     <div class="clearfix"></div>
     <%= f.label :beta_constant, class: 'pull-left' %>
     <%= f.number_field :beta_constant, placeholder: "beta", class: 'numeric pull-right', step: :any %>
