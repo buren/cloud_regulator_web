@@ -1,7 +1,7 @@
 <div class="col-md-5 text-center">
   <h2><%= title %></h2>
   <br><br>
-  <%= form_for process_config do |f| %>
+  <%= form_for process_config, class: 'config-form', remote: true do |f| %>
     <%= f.label :k_constant, class: 'pull-left' %>
     <%= f.number_field :k_constant, placeholder: "k", class: 'numeric pull-right', step: :any %>
 
