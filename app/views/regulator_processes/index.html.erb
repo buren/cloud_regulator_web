@@ -87,7 +87,7 @@
 
   var req = 0;
   function update() {
-    $.getJSON('/live_cycles?req=' + req + "&points=" + getParameterByName("points"), function(jsonData) {
+    $.getJSON('/live_cycles?req=' + req + "&points=" + getParameterByName("points") + "&alt=" + getParameterByName("alt"), function(jsonData) {
       graph.setData(jsonData);
     });
     req++;
