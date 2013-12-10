@@ -15,7 +15,7 @@ class ProcessCyclesController < ApplicationController
     end
 
     ref_sig = ReferenceSignal.last
-    ref_sig.reference_value *= -1 if (params[:req] && params[:alt].eql?("true") and (params[:req].to_i%5).eql?(0)
+    ref_sig.reference_value *= -1 if (params[:req] && params[:alt].eql?("true")) and (params[:req].to_i%5).eql?(0)
     ref_sig.save!
 
     render json: data and return
