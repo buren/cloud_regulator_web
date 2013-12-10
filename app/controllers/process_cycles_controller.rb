@@ -13,6 +13,11 @@ class ProcessCyclesController < ApplicationController
         a: so.latency
       }
     end
+
+    ref_sig = ReferenceSignal.last
+    ref_sig.reference_value *= -1 if (params[:req]%5).eql?(0)
+    ref_sig.save!
+
     render json: data and return
   end
 
